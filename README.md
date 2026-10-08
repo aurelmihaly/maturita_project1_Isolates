@@ -1,17 +1,23 @@
-# maturita_project1
+# Isolates - maturitní_aplikace
 
-A new Flutter project.
+# Jak tato aplikace funguje
+Tato aplikace se skladá ze čtyř dart kódů v lib.
+Main.dart  - spustí aplikaci a přesměruje na home obrazovku
+home_screen.dart - zobrazuje nadpisy, zda aplikace teď počita nebo ne a také tlačitka
+spinner_box.dart - kód pro otačejicí se čtverec
+prime_calculator.dart - vypočet všech prvočísel do 5 milionů, dá se spustit dvěma způsoby, přes primary vrstvu a s pomoci isolate vrstvy.
 
-## Getting Started
+# Spuštění
+Zadejte tyhle příkazy do terminalu ve složce maturita_project1
+--flutter pub get
+--flutter run
 
-This project is a starting point for a Flutter application.
+## Zapnutí testů
+--flutter test
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Co testy ověřuji
+- `prime_calculator_test.dart`: správné počty prvočísel pro známé limity
+  (10 → 4, 100 → 25, 1000 → 168) a že výsledek z isolate je stejný
+  jako z přímého volání.
+- `home_screen_test.dart`: zobrazení tlačítek a výchozího textu,
+  zobrazení výsledku po stisku „Isolate", a že se animace otáčí.
